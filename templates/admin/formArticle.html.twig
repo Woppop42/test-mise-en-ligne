@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% if editMode %}
+<h1 class="text-center">Modification de l'articles</h1>
+{% else %}
+<h1 class="text-center">Création  de l'article</h1>
+    
+{% endif %}
+
+<div class="container text-center">
+{{ form_start(form)}}
+{{ form_row(form.title, {
+    label: "Titre de l'article"
+})}}
+{{ form_row(form.image, {
+    label: "Image de l'article"
+})}}
+{{ form_row(form.content, {
+    label: "Contenu de l'article"
+})}}
+{{ form_row(form.category, {
+    label: "Catégorie de l'article"
+})}}
+<button type='submit' class="btn btn-primary">Soumettre</button>
+{{ form_end(form)}}
+</div>
+
+
+{% endblock %}
